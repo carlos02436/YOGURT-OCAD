@@ -141,3 +141,17 @@
     box-shadow: 0 0 0 0.1rem rgba(25, 135, 84, 0.25);
     transition: all 0.3s ease-in-out;
 }
+
+/* Efectos y Animaciones para la página */
+@keyframes circle-in-top-right {
+  from {
+    clip-path: circle(0%);
+  }
+  to {
+    clip-path: circle(150% at top right);
+  }
+}
+
+[transition-style="in:circle:top-right"] {
+  animation: 2.5s cubic-bezier(.25, 1, .30, 1) circle-in-top-right both;
+}
