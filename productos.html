@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yogurt Ocad</title>
+    <!-- Transition.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/transition.css/1.0.0/transition.min.css">
+    <!-- Opcional: Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="img/Logo Yogurt Ocad.png" rel="icon">
+    <link rel="stylesheet" href="css/productos.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top section header"
+        style="background: rgba(255,255,255,0.85); backdrop-filter: blur(6px); box-shadow: 0 2px 12px rgba(0,0,0,0.07);">
+        <div class="container-fluid fw-bold">
+            <img src="img/Logo Yogurt Ocad.png" alt="Logo Yogurt Ocad" class="logo me-2"
+                style="width: 80px; height: 80px;">
+            <a class="navbar-brand d-flex align-items-center ms-2" style="font-size: 2rem; font-weight: bold;">YOGURT
+                OCAD</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link nav-hover" aria-current="page" href="#carouselExample">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-hover" aria-current="page" href="#nosotros">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-hover" aria-current="page" href="#productos">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-hover" aria-current="page" href="#testimonios">Testimonios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-hover" aria-current="page" href="#Pedidos">Pedidos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-hover" aria-current="page" href="#contacto">Contacto</a>
+                    </li>
+                </ul>
+                <div class="d-flex justify-content-end">
+                    <li class="nav-item d-flex align-items-center ms-3 me-4" id="cart-count" style="gap: 8px;">
+                        <span class="fw-bold">Añadido al Carrito</span>
+                        <span class="badge bg-primary ms-2" style="font-size:1rem;">0</span>
+                    </li>
+                </div>
+                <form class="d-flex" role="search" id="searchForm" autocomplete="off">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar"
+                        id="searchInput" />
+                    <button class="btn btn-outline-success ver-mas-btn" type="submit">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección Principal de Productos -->
+    <section id="productos">
+
+        <!-- tarjetas de Productos -->
+        <div class="container mt-5 pt-5">
+            <h1 class="text-center mb-4 fw-bold">Nuestros Productos</h1>
+            <p class="text-center mb-5">Descubre la variedad de sabores y texturas que ofrecemos en Yogurt Ocad.</p>
+            <div class="container">
+                <div class="row g-4 justify-content-center">
+                    <!-- Tarjeta 1 -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+                        <div class="card producto-card shadow w-100 h-100">
+                            <img src="img/fresa.jpg" alt="Yogurt de Fresa" class="card-img-top"
+                                style="height: 200px; object-fit:cover; border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem;">
+                            <div class="card__content p-3">
+                                <p class="card__title">Yogurt de Fresa</p>
+                                <div class="mb-2" aria-label="Calificación: 4.5 de 5">
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-half text-warning"></i>
+                                    <span class="ms-1 text-muted" style="font-size:0.80em;">4.5</span>
+                                </div>
+                                <p class="card__description mb-2">Delicioso yogurt artesanal con sabor natural a fresa.
+                                    Perfecto para un desayuno saludable o un snack refrescante.</p>
+                                <p class="card__description bg-warning text-white text-center rounded py-1 mb-0 p">
+                                    Precio: $10.000,00 COP x 1Lt</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tarjeta 2 -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+                        <div class="card producto-card shadow w-100 h-100">
+                            <img src="img/fresa.jpg" alt="Yogurt de Fresa" class="card-img-top"
+                                style="height: 200px; object-fit:cover; border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem;">
+                            <div class="card__content p-3">
+                                <p class="card__title">Yogurt de Fresa</p>
+                                <div class="mb-2" aria-label="Calificación: 4.5 de 5">
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-half text-warning"></i>
+                                    <span class="ms-1 text-muted" style="font-size:0.80em;">4.5</span>
+                                </div>
+                                <p class="card__description mb-2">Delicioso yogurt artesanal con sabor natural a fresa.
+                                    Perfecto para un desayuno saludable o un snack refrescante.</p>
+                                <p class="card__description bg-warning text-white text-center rounded py-1 mb-0 p">
+                                    Precio: $10.000,00 COP x 1Lt</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tarjeta 3 -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+                        <div class="card producto-card shadow w-100 h-100">
+                            <img src="img/fresa.jpg" alt="Yogurt de Fresa" class="card-img-top"
+                                style="height: 200px; object-fit:cover; border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem;">
+                            <div class="card__content p-3">
+                                <p class="card__title">Yogurt de Fresa</p>
+                                <div class="mb-2" aria-label="Calificación: 4.5 de 5">
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-half text-warning"></i>
+                                    <span class="ms-1 text-muted" style="font-size:0.80em;">4.5</span>
+                                </div>
+                                <p class="card__description mb-2">Delicioso yogurt artesanal con sabor natural a fresa.
+                                    Perfecto para un desayuno saludable o un snack refrescante.</p>
+                                <p class="card__description bg-warning text-white text-center rounded py-1 mb-0 p">
+                                    Precio: $10.000,00 COP x 1Lt</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tarjeta 4 -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+                        <div class="card producto-card shadow w-100 h-100">
+                            <img src="img/fresa.jpg" alt="Yogurt de Fresa" class="card-img-top"
+                                style="height: 200px; object-fit:cover; border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem;">
+                            <div class="card__content p-3">
+                                <p class="card__title">Yogurt de Fresa</p>
+                                <div class="mb-2" aria-label="Calificación: 4.5 de 5">
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-half text-warning"></i>
+                                    <span class="ms-1 text-muted" style="font-size:0.80em;">4.5</span>
+                                </div>
+                                <p class="card__description mb-2">Delicioso yogurt artesanal con sabor natural a fresa.
+                                    Perfecto para un desayuno saludable o un snack refrescante.</p>
+                                <p class="card__description bg-warning text-white text-center rounded py-1 mb-0 p">
+                                    Precio: $10.000,00 COP x 1Lt</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tarjeta 5 -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+                        <div class="card producto-card shadow w-100 h-100">
+                            <img src="img/fresa.jpg" alt="Yogurt de Fresa" class="card-img-top"
+                                style="height: 200px; object-fit:cover; border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem;">
+                            <div class="card__content p-3">
+                                <p class="card__title">Yogurt de Fresa</p>
+                                <div class="mb-2" aria-label="Calificación: 4.5 de 5">
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-half text-warning"></i>
+                                    <span class="ms-1 text-muted" style="font-size:0.80em;">4.5</span>
+                                </div>
+                                <p class="card__description mb-2">Delicioso yogurt artesanal con sabor natural a fresa.
+                                    Perfecto para un desayuno saludable o un snack refrescante.</p>
+                                <p class="card__description bg-warning text-white text-center rounded py-1 mb-0 p">
+                                    Precio: $10.000,00 COP x 1Lt</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tarjeta 6 -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+                        <div class="card producto-card shadow w-100 h-100">
+                            <img src="img/fresa.jpg" alt="Yogurt de Fresa" class="card-img-top"
+                                style="height: 200px; object-fit:cover; border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem;">
+                            <div class="card__content p-3">
+                                <p class="card__title">Yogurt de Fresa</p>
+                                <div class="mb-2" aria-label="Calificación: 4.5 de 5">
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-half text-warning"></i>
+                                    <span class="ms-1 text-muted" style="font-size:0.80em;">4.5</span>
+                                </div>
+                                <p class="card__description mb-2">Delicioso yogurt artesanal con sabor natural a fresa.
+                                    Perfecto para un desayuno saludable o un snack refrescante.</p>
+                                <p class="card__description bg-warning text-white text-center rounded py-1 mb-0 p">
+                                    Precio: $10.000,00 COP x 1Lt</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 7 -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+                        <div class="card producto-card shadow w-100 h-100">
+                            <img src="img/fresa.jpg" alt="Yogurt de Fresa" class="card-img-top"
+                                style="height: 200px; object-fit:cover; border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem;">
+                            <div class="card__content p-3">
+                                <p class="card__title">Yogurt de Fresa</p>
+                                <div class="mb-2" aria-label="Calificación: 4.5 de 5">
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-half text-warning"></i>
+                                    <span class="ms-1 text-muted" style="font-size:0.80em;">4.5</span>
+                                </div>
+                                <p class="card__description mb-2">Delicioso yogurt artesanal con sabor natural a fresa.
+                                    Perfecto para un desayuno saludable o un snack refrescante.</p>
+                                <p class="card__description bg-warning text-white text-center rounded py-1 mb-0 p">
+                                    Precio: $10.000,00 COP x 1Lt</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tarjeta 8 -->
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+                        <div class="card producto-card shadow w-100 h-100">
+                            <img src="img/fresa.jpg" alt="Yogurt de Fresa" class="card-img-top"
+                                style="height: 200px; object-fit:cover; border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem;">
+                            <div class="card__content p-3">
+                                <p class="card__title">Yogurt de Fresa</p>
+                                <div class="mb-2" aria-label="Calificación: 4.5 de 5">
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-half text-warning"></i>
+                                    <span class="ms-1 text-muted" style="font-size:0.80em;">4.5</span>
+                                </div>
+                                <p class="card__description mb-2">Delicioso yogurt artesanal con sabor natural a fresa.
+                                    Perfecto para un desayuno saludable o un snack refrescante.</p>
+                                <p class="card__description bg-warning text-white text-center rounded py-1 mb-0 p">
+                                    Precio: $10.000,00 COP x 1Lt</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Fabricación Artesanal -->
+    <section id="fabricacion-artesanal" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-4">FABRICACIÓN ARTESANAL DEL YOGURT OCAD</h2>
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="img/leche-fresca.jpg" alt="Selección de leche fresca" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-md-6">
+                    <h4 class="fw-semibold mb-2">1. Selección de Leche Fresca</h4>
+                    <p>
+                        Utilizamos leche fresca de alta calidad, proveniente de productores locales comprometidos con prácticas responsables. Esta base garantiza un yogurt nutritivo y delicioso.
+                    </p>
+                </div>
+            </div>
+            <div class="row align-items-center flex-md-row-reverse mb-5">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="img/pasteurizacion.jpg" alt="Pasteurización" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-md-6">
+                    <h4 class="fw-semibold mb-2">2. Pasteurización</h4>
+                    <p>
+                        La leche es cuidadosamente pasteurizada para eliminar impurezas y bacterias, asegurando la inocuidad y frescura del producto final.
+                    </p>
+                </div>
+            </div>
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="img/fermentacion.jpg" alt="Fermentación" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-md-6">
+                    <h4 class="fw-semibold mb-2">3. Fermentación Natural</h4>
+                    <p>
+                        Añadimos cultivos probióticos seleccionados y dejamos fermentar la mezcla bajo condiciones controladas, logrando una textura cremosa y un sabor auténtico.
+                    </p>
+                </div>
+            </div>
+            <div class="row align-items-center flex-md-row-reverse mb-5">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="img/sabores-artesanales.jpg" alt="Adición de sabores" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-md-6">
+                    <h4 class="fw-semibold mb-2">4. Adición de Sabores Naturales</h4>
+                    <p>
+                        Incorporamos frutas frescas y naturales, como fresa, mora y durazno, sin conservantes ni colorantes artificiales, para ofrecer una experiencia saludable y deliciosa.
+                    </p>
+                </div>
+            </div>
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="img/envasado.jpg" alt="Envasado artesanal" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-md-6">
+                    <h4 class="fw-semibold mb-2">5. Envasado Artesanal</h4>
+                    <p>
+                        El yogurt es envasado cuidadosamente en recipientes higiénicos y seguros, preservando su frescura y calidad hasta llegar a tus manos.
+                    </p>
+                </div>
+            </div>
+            <div class="row align-items-center flex-md-row-reverse">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="img/entrega.jpg" alt="Entrega al cliente" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-md-6">
+                    <h4 class="fw-semibold mb-2">6. Entrega al Cliente</h4>
+                    <p>
+                        Finalmente, entregamos el yogurt Ocad directamente a nuestros clientes, garantizando un producto fresco, artesanal y listo para disfrutar en familia.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light pt-5 pb-3 mt-5">
+        <div class="container">
+            <div class="row gy-4">
+                <!-- Logo y descripción -->
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <img src="img/Logo Yogurt Ocad.png" alt="Yogurt Ocad Logo" style="width:60px; height:60px;"
+                            class="mb-2">
+                    </div>
+                    <p>
+                        <strong>Yogurt Ocad</strong> elabora yogures artesanales con ingredientes frescos y naturales,
+                        apoyando a productores locales y promoviendo hábitos saludables.
+                    </p>
+                </div>
+
+                <!-- Navegación rápida -->
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Navegación</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Inicio</a></li>
+                        <li><a href="#nosotros" class="text-light text-decoration-none">Nosotros</a></li>
+                        <li><a href="#productos" class="text-light text-decoration-none">Productos</a></li>
+                        <li><a href="#testimonios" class="text-light text-decoration-none">Testimonios</a></li>
+                        <li><a href="#Pedidos" class="text-light text-decoration-none">Pedidos</a></li>
+                        <li><a href="#contacto" class="text-light text-decoration-none">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <!-- Información de contacto -->
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Contacto</h5>
+                    <p class="mb-1"><i class="bi bi-geo-alt-fill"></i> Calle 123 #45-67, Ciudad, País</p>
+                    <p class="mb-1"><i class="bi bi-telephone-fill"></i> <a href="tel:+573001234567"
+                            class="text-light text-decoration-none">+57 300 123 4567</a></p>
+                    <p class="mb-1"><i class="bi bi-envelope-fill"></i> <a href="mailto:info@yogurtocad.com"
+                            class="text-light text-decoration-none">info@yogurtocad.com</a></p>
+                    <p class="mb-2"><i class="bi bi-clock-fill"></i> Lunes a Sábado, 8:00 am - 6:00 pm</p>
+                    <div>
+                        <a href="https://www.facebook.com/share/1AQnN3VmAr/" target="_blank"
+                            class="me-2 text-decoration-none social-icon" title="Facebook" style="color:#3b5998;">
+                            <img src="img/facebook.png" alt="Facebook" width="24" height="24"
+                                style="vertical-align:middle;" class="social-icon">
+                        </a>
+                        <a href="https://instagram.com" target="_blank" class="me-2 text-decoration-none social-icon"
+                            title="Instagram" style="color:#E4405F;">
+                            <img src="img/instagram.png" alt="Instagram" width="24" height="24"
+                                style="vertical-align:middle;" class="social-icon">
+                        </a>
+                        <a href="https://wa.me/573001234567" target="_blank" class="text-decoration-none social-icon"
+                            title="WhatsApp" style="color:#25D366;">
+                            <img src="img/whatsapp.png" alt="WhatsApp" width="24" height="24"
+                                style="vertical-align:middle;" class="social-icon">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-secondary mt-4 mb-2">
+            <div class="text-center">
+                <small>&copy; 2025 Yogurt Ocad | Todos los derechos reservados.</a></small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sección de Scripts -->
+
+    <!-- Bootstrap JS Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script personalizado JS -->
+    <script src="scripts.js/script.js"></script>
+</body>
+
+</html>
