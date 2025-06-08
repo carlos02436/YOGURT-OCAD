@@ -46,3 +46,4 @@ document.getElementById('searchForm').addEventListener('submit', function (e) {
         alert('No se encontraron resultados para: ' + query);
     }
 });
+

@@ -164,3 +164,20 @@
 .m_v:hover {
     transform: scale(1.05);
 }
+
+/* Ancho del input Valor del Producto */
+.ancho {
+    width: 150px;
+    text-align: center;
+}
+
+/* Ancho del input Valor del Producto */
+.agregar {
+    width: auto;
+}
+
+.agregar:hover {
+    background-color: #198754;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}

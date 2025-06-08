@@ -1,15 +1,14 @@
-//Conteo del Carrito
-// Productos disponibles
+// Datos de los productos disponibles
 const productosData = {
     fresa: { nombre: "Yogurt de Fresa", imagen: "img/fresa.jpg" },
     mora: { nombre: "Yogurt de Mora", imagen: "img/mora.jpg" },
     kummis: { nombre: "Yogurt Kummis", imagen: "img/fresa2.jpg" }
 };
 
-// Estado de productos seleccionados
-window.productosSeleccionados = [];
+// Arreglo para almacenar los productos seleccionados por el usuario
+let productosSeleccionados = [];
 
-// Elementos
+// Referencias a elementos del DOM
 const productoSelect = document.getElementById('productoSelect');
 const cantidadInput = document.getElementById('cantidadInput');
 const agregarProductoBtn = document.getElementById('agregarProducto');
@@ -17,7 +16,7 @@ const productosSeleccionadosDiv = document.getElementById('productosSeleccionado
 const productosHiddenDiv = document.getElementById('productosHidden');
 const productoImagen = document.getElementById('productoImagen');
 
-// Cambiar imagen al seleccionar producto
+// Evento: Cambia la imagen al seleccionar un producto
 productoSelect.addEventListener('change', function () {
     const value = this.value;
     if (productosData[value]) {
@@ -28,41 +27,44 @@ productoSelect.addEventListener('change', function () {
     }
 });
 
-// Añadir producto a la lista
+// Evento: Agrega el producto seleccionado al arreglo y actualiza la vista
 agregarProductoBtn.addEventListener('click', function () {
     const prodValue = productoSelect.value;
     const cantidad = parseInt(cantidadInput.value, 10);
 
+    // Validación de selección y cantidad
     if (!prodValue || isNaN(cantidad) || cantidad < 1) return;
 
-    // Agregar producto al array
+    // Agrega el producto al arreglo
     productosSeleccionados.push({ producto: prodValue, cantidad: cantidad });
 
-    // Limpiar selección
+    // Reinicia los campos de selección
     productoSelect.selectedIndex = 0;
     cantidadInput.value = 1;
     productoImagen.src = "img/Logo Yogurt Ocad.png";
 
+    // Actualiza la lista de productos seleccionados
     renderProductosSeleccionados();
 });
 
-// Renderizar productos seleccionados
+// Función: Renderiza los productos seleccionados en la interfaz
 function renderProductosSeleccionados() {
     productosSeleccionadosDiv.innerHTML = '';
     productosHiddenDiv.innerHTML = '';
+
     productosSeleccionados.forEach((item, idx) => {
-        // Visual
+        // Crea la visualización del producto seleccionado
         const badge = document.createElement('span');
         badge.className = "badge bg-primary d-flex align-items-center";
         badge.style.gap = "6px";
         badge.style.fontSize = "1rem";
         badge.innerHTML = `
-                        ${productosData[item.producto].nombre} (${item.cantidad}L)
-                        <button type="button" class="btn-close btn-close-white btn-sm ms-1 remove-producto" data-idx="${idx}" aria-label="Eliminar"></button>
-                    `;
+            ${productosData[item.producto].nombre} (${item.cantidad}L)
+            <button type="button" class="btn-close btn-close-white btn-sm ms-1 remove-producto" data-idx="${idx}" aria-label="Eliminar"></button>
+        `;
         productosSeleccionadosDiv.appendChild(badge);
 
-        // Campos ocultos para el formulario
+        // Crea inputs ocultos para enviar los datos en el formulario
         const inputProd = document.createElement('input');
         inputProd.type = "hidden";
         inputProd.name = "producto[]";
@@ -77,7 +79,7 @@ function renderProductosSeleccionados() {
     });
 }
 
-// Eliminar producto seleccionado
+// Evento: Elimina un producto seleccionado al hacer clic en el botón de eliminar
 productosSeleccionadosDiv.addEventListener('click', function (e) {
     if (e.target.classList.contains('remove-producto')) {
         const idx = parseInt(e.target.getAttribute('data-idx'), 10);
@@ -86,95 +88,77 @@ productosSeleccionadosDiv.addEventListener('click', function (e) {
     }
 });
 
-// Validación antes de enviar
-document.getElementById('pedidoForm').addEventListener('submit', function (e) {
-    if (productosSeleccionados.length === 0) {
-        e.preventDefault();
-        alert('Por favor, seleccione al menos un producto para su pedido.');
-    }
-});
-// Renderizar productos seleccionados al cargar la página
-renderProductosSeleccionados();
-document.addEventListener('DOMContentLoaded', function () {
-    let cartCount = 0;
-    const badgeElement = document.querySelector('#cart-count .badge');
-    const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
-
-    addToCartButtons.forEach(function (button) {
-        button.addEventListener('click', function () {
-            cartCount++;
-            if (badgeElement) {
-                badgeElement.textContent = cartCount;
-            }
-        });
-    });
-});
-
-// WhatsApp envío automático al enviar el formulario
+// Evento: Maneja el envío del formulario de pedido
 document.getElementById('pedidoForm').addEventListener('submit', function (e) {
     e.preventDefault();
 
-    // Obtener datos del formulario
+    // Validación: Debe haber al menos un producto seleccionado
+    if (productosSeleccionados.length === 0) {
+        alert('Por favor, seleccione al menos un producto para su pedido.');
+        return;
+    }
+
+    // Obtiene los datos del cliente
     const nombre = document.getElementById('nombre').value.trim();
     const telefono = document.getElementById('telefono').value.trim();
     const direccion = document.getElementById('direccion').value.trim();
 
-    // Obtener productos seleccionados
-    let productos = [];
-    if (window.productosSeleccionados && Array.isArray(window.productosSeleccionados) && window.productosSeleccionados.length > 0) {
-        productos = window.productosSeleccionados.map(item => {
-            // productosData está en el script global
-            const nombreProd = window.productosData && window.productosData[item.producto] ? window.productosData[item.producto].nombre : item.producto;
-            return `${nombreProd} (${item.cantidad}L)`;
-        });
-    }
-
-    if (!nombre || !telefono || !direccion || productos.length === 0) {
-        e.preventDefault();
-        alert('Por favor, complete todos los campos y agregue al menos un producto.');
+    // Validación: Todos los campos deben estar completos
+    if (!nombre || !telefono || !direccion) {
+        alert('Por favor, complete todos los campos.');
         return;
     }
 
-    // Construir mensaje
-    let mensaje = `¡Hola! Quiero hacer un pedido:\n`;
-    mensaje += `*Nombre:* ${nombre}\n`;
-    mensaje += `*Teléfono:* ${telefono}\n`;
-    mensaje += `*Dirección:* ${direccion}\n`;
-    mensaje += `*Productos:*\n`;
-    productos.forEach(p => {
-        mensaje += `- ${p}\n`;
+    // Construye el mensaje con los productos y datos del cliente
+    const productos = productosSeleccionados.map(item => {
+        const nombreProd = productosData[item.producto]?.nombre || item.producto;
+        return `${nombreProd} (${item.cantidad}L)`;
+    }).join('\n- ');
+
+    // Calcula el total a pagar
+    const totalLitros = productosSeleccionados.reduce((sum, item) => sum + item.cantidad, 0);
+    const precioPorLitro = 10000;
+    const totalPagar = totalLitros * precioPorLitro;
+    const totalFormateado = totalPagar.toLocaleString('es-CO', {
+        style: 'currency',
+        currency: 'COP'
     });
 
-    // Codificar el mensaje para URL
-    const mensajeCodificado = encodeURIComponent(mensaje);
+    // Mensaje final para enviar por WhatsApp
+    const mensaje = `¡Hola! Quiero hacer un pedido:\n` +
+        `*Nombre:* ${nombre}\n` +
+        `*Teléfono:* ${telefono}\n` +
+        `*Dirección:* ${direccion}\n` +
+        `*Productos:*\n- ${productos}\n` +
+        `*Total a Pagar:* ${totalFormateado}`;
 
-    // Número de WhatsApp (sin espacios ni signos)
-    const numero = "573175625131";
-    const url = `https://wa.me/${numero}?text=${mensajeCodificado}`;
-
-    // Abrir WhatsApp y prevenir el envío solo si se abre WhatsApp
+    // Abre WhatsApp Web con el mensaje prellenado
+    const url = `https://web.whatsapp.com/send?phone=573175625131&text=${encodeURIComponent(mensaje)}`;
     window.open(url, '_blank');
-    e.preventDefault();
 
-    // Limpiar formulario y productos seleccionados
+    // Reinicia el formulario y la selección de productos
     this.reset();
-    window.productosSeleccionados = [];
-    document.getElementById('productoImagen').src = "img/Logo Yogurt Ocad.png";
-    if (typeof renderProductosSeleccionados === "function") {
-        renderProductosSeleccionados();
+    productosSeleccionados = [];
+    productoImagen.src = "img/Logo Yogurt Ocad.png";
+    renderProductosSeleccionados();
+
+    // Reinicia el contador del carrito si existe
+    const badgeElement = document.querySelector('#cart-count .badge');
+    if (badgeElement) {
+        badgeElement.textContent = "0";
     }
 });
 
-// Búsqueda de productos y secciones
+// Buscador de productos
 document.getElementById('searchForm').addEventListener('submit', function (e) {
     e.preventDefault();
     const query = document.getElementById('searchInput').value.trim().toLowerCase();
     if (!query) return;
 
-    // Busca en títulos y descripciones de productos y secciones
     let found = false;
-    // Buscar en productos
-    document.querySelectorAll('.producto-card').forEach(card => {
+
+    // Buscar en los productos
+    document.querySelectorAll('.card').forEach(card => {
         const title = card.querySelector('.card-title')?.textContent.toLowerCase() || '';
         const desc = card.querySelector('.card-text')?.textContent.toLowerCase() || '';
         if (title.includes(query) || desc.includes(query)) {
@@ -185,7 +169,7 @@ document.getElementById('searchForm').addEventListener('submit', function (e) {
         }
     });
 
-    // Buscar en secciones principales si no encontró en productos
+    // Si no se encuentra en productos, buscar en secciones por id o contenido
     if (!found) {
         const sections = [
             { id: 'nosotros', name: 'Sobre Nosotros' },
@@ -194,9 +178,17 @@ document.getElementById('searchForm').addEventListener('submit', function (e) {
             { id: 'Pedidos', name: 'Pedidos' },
             { id: 'contacto', name: 'Contacto' }
         ];
+
         for (const sec of sections) {
-            if (sec.name.toLowerCase().includes(query) || sec.id.toLowerCase().includes(query)) {
-                document.getElementById(sec.id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+            const el = document.getElementById(sec.id);
+            if (
+                sec.name.toLowerCase().includes(query) ||
+                sec.id.toLowerCase().includes(query) ||
+                el?.textContent.toLowerCase().includes(query)
+            ) {
+                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                el.classList.add('border', 'border-info', 'border-3');
+                setTimeout(() => el.classList.remove('border', 'border-info', 'border-3'), 2000);
                 found = true;
                 break;
             }
@@ -207,3 +199,32 @@ document.getElementById('searchForm').addEventListener('submit', function (e) {
         alert('No se encontraron resultados para: ' + query);
     }
 });
+
+// Contador del carrito
+// Inicializa el contador de productos en el carrito
+let cartCount = 0;
+
+// Referencia al span del contador
+const badgeElement = document.querySelector('#cart-count .badge');
+
+// Función para actualizar el contador visual
+function actualizarContador() {
+    if (badgeElement) {
+        badgeElement.textContent = cartCount;
+    }
+}
+
+// Ejemplo: función para agregar producto al carrito y actualizar contador
+function agregarAlCarrito() {
+    cartCount++;
+    actualizarContador();
+}
+
+// Simulación: asignar el evento a los botones que agregan producto
+document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+    button.addEventListener('click', agregarAlCarrito);
+});
+
+// Si quieres, puedes llamar actualizarContador() al inicio para mostrar el valor correcto desde el inicio
+actualizarContador();
+
