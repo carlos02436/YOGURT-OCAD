@@ -228,3 +228,20 @@ document.querySelectorAll('.add-to-cart-btn').forEach(button => {
 // Si quieres, puedes llamar actualizarContador() al inicio para mostrar el valor correcto desde el inicio
 actualizarContador();
 
+// Evento que controla el menú de navegación para que cierre al hacer clic en un enlace
+document.addEventListener('DOMContentLoaded', function () {
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    const bsCollapse = new bootstrap.Collapse(document.getElementById('navbarSupportedContent'), {
+        toggle: false
+    });
+
+    navLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+            // Cierra el menú si está abierto
+            if (document.querySelector('.navbar-toggler').offsetParent !== null) {
+                bsCollapse.hide();
+            }
+        });
+    });
+});
+
