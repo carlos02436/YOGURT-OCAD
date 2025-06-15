@@ -245,3 +245,19 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// Código responsivo en Celulares
+// Cierra el menú colapsado en móviles al seleccionar una opción
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+    if (bsCollapse && navbarCollapse.classList.contains('show')) {
+      bsCollapse.hide();
+    }
+  });
+});
+// Código para el botón de "Volver arriba"
+// Muestra el botón de "Volver arriba" cuando se hace scroll hacia abajo
+window.onscroll = function () {
+  scrollFunction();
+};
