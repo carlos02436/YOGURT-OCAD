@@ -249,49 +249,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Código responsivo para dispositivos móviles y tablets y ajusta el tamaño del logo y el título del encabezado
-function ajustarEncabezado() {
-    const logo = document.getElementById('logo-ocad');
-    const titulo = document.getElementById('titulo-ocad');
-    if (!logo || !titulo) return;
-
-    if (window.innerWidth < 400) { // Celulares muy pequeños
-        logo.style.width = '20px';
-        logo.style.height = '20px';
-        titulo.style.fontSize = '0.50rem';
-    } else if (window.innerWidth < 576) { // Celulares normales
-        logo.style.width = '30px';
-        logo.style.height = '30px';
-        titulo.style.fontSize = '0.50rem';
-    } else if (window.innerWidth < 992) { // Tablets
-        logo.style.width = '50px';
-        logo.style.height = '50px';
-        titulo.style.fontSize = '1.2rem';
-    } else { // Escritorio
-        logo.style.width = '70px';
-        logo.style.height = '70px';
-        titulo.style.fontSize = '1.7rem';
-    }
-}
-
-// Ejecuta al cargar y al cambiar el tamaño de la ventana
-window.addEventListener('DOMContentLoaded', function() {
-    ajustarEncabezado();
-
-    // Forzar tamaño pequeño en móviles al cargar
-    const isMobile = /android|iphone|ipad|ipod|opera mini|iemobile|mobile/i.test(navigator.userAgent) || window.innerWidth < 576;
-    if (isMobile) {
-        const logo = document.getElementById('logo-ocad');
-        const titulo = document.getElementById('titulo-ocad');
-        if (logo && titulo) {
-            logo.style.width = '30px';
-            logo.style.height = '30px';
-            titulo.style.fontSize = '0.50rem';
-        }
-    }
-});
-window.addEventListener('resize', ajustarEncabezado);
-
 // Código JS para el Botón Scroll hacia abajo y devuelve al inicio
 // Mostrar/ocultar el botón al hacer scroll
 window.addEventListener('scroll', function () {
