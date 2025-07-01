@@ -219,5 +219,13 @@
         display: inline-block;
     }
 
+    /* Ajusta el ancho de los botones en pantallas pequeñas */
+    .comprar-btn,
+    .add-to-cart-btn {
+        display: block;
+        width: 100%;
+        margin-right: 0 !important;
+        margin-bottom: 8px;
+    }
 
 }
