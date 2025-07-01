@@ -185,12 +185,39 @@
 
 /* Estilos para dispositivos móviles: Celular */
 @media (max-width: 768px) {
-  .logo {
-    width: 50px !important;
-    height: 50px !important;
-  }
+    .logo {
+        width: 50px !important;
+        height: 50px !important;
+    }
 
-  .navbar-brand {
-    font-size: 1.2rem !important;
-  }
+    .navbar-brand {
+        font-size: 1.2rem !important;
+    }
+}
+
+/* Botones añadir al carrito y comprar se hagan más pequeños: Celular */
+@media (max-width: 768px) {
+
+    .comprar-btn,
+    .add-to-cart-btn {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.7rem;
+        margin-bottom: 8px;
+    }
+
+    .comprar-btn {
+        margin-right: 6px !important;
+    }
+
+    .add-to-cart-btn {
+        margin-left: 0 !important;
+    }
+
+    /* Asegura separación vertical en pantallas pequeñas */
+    .comprar-btn,
+    .add-to-cart-btn {
+        display: inline-block;
+    }
+
+
 }
