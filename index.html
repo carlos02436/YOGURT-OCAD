@@ -73,24 +73,6 @@
         <i class="bi bi-arrow-up fs-3"></i>
     </button>
 
-    <!-- Código JS para el Botón Scroll hacia abajo y devuelve al inicio -->
-    <script>
-        // Mostrar/ocultar el botón al hacer scroll
-        window.addEventListener('scroll', function () {
-            const btn = document.getElementById('scrollToTopBtn');
-            if (window.scrollY > 200) {
-                btn.style.display = 'flex';
-            } else {
-                btn.style.display = 'none';
-            }
-        });
-
-        // Scroll suave al inicio al hacer clic
-        document.getElementById('scrollToTopBtn').addEventListener('click', function () {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    </script>
-
     <!-- Carrusel de imagenes -->
     <section id="Inicio" style="scroll-margin-top: 100px;">
         <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">

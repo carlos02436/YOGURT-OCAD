@@ -50,16 +50,27 @@ document.getElementById('searchForm').addEventListener('submit', function (e) {
 // Código responsivo en Celulares
 // Cierra el menú colapsado en móviles al seleccionar una opción
 document.querySelectorAll('.nav-link').forEach(link => {
-  link.addEventListener('click', () => {
-    const navbarCollapse = document.querySelector('.navbar-collapse');
-    const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-    if (bsCollapse && navbarCollapse.classList.contains('show')) {
-      bsCollapse.hide();
-    }
-  });
+    link.addEventListener('click', () => {
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+        if (bsCollapse && navbarCollapse.classList.contains('show')) {
+            bsCollapse.hide();
+        }
+    });
 });
-// Código para el botón de "Volver arriba"
-// Muestra el botón de "Volver arriba" cuando se hace scroll hacia abajo
-window.onscroll = function () {
-  scrollFunction();
-};
+
+// Código JS para el Botón Scroll hacia abajo y devuelve al inicio
+// Mostrar/ocultar el botón al hacer scroll
+window.addEventListener('scroll', function () {
+    const btn = document.getElementById('scrollToTopBtn');
+    if (window.scrollY > 200) {
+        btn.style.display = 'flex';
+    } else {
+        btn.style.display = 'none';
+    }
+});
+
+// Scroll suave al inicio al hacer clic
+document.getElementById('scrollToTopBtn').addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});

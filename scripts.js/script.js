@@ -256,13 +256,13 @@ function ajustarEncabezado() {
     if (!logo || !titulo) return;
 
     if (window.innerWidth < 400) { // Celulares muy pequeños
-        logo.style.width = '28px';
-        logo.style.height = '28px';
-        titulo.style.fontSize = '0.95rem';
+        logo.style.width = '20px';
+        logo.style.height = '20px';
+        titulo.style.fontSize = '0.50rem';
     } else if (window.innerWidth < 576) { // Celulares normales
-        logo.style.width = '34px';
-        logo.style.height = '34px';
-        titulo.style.fontSize = '1.05rem';
+        logo.style.width = '30px';
+        logo.style.height = '30px';
+        titulo.style.fontSize = '0.50rem';
     } else if (window.innerWidth < 992) { // Tablets
         logo.style.width = '50px';
         logo.style.height = '50px';
@@ -277,3 +277,19 @@ function ajustarEncabezado() {
 // Ejecuta al cargar y al cambiar el tamaño de la ventana
 window.addEventListener('DOMContentLoaded', ajustarEncabezado);
 window.addEventListener('resize', ajustarEncabezado);
+
+// Código JS para el Botón Scroll hacia abajo y devuelve al inicio
+// Mostrar/ocultar el botón al hacer scroll
+window.addEventListener('scroll', function () {
+    const btn = document.getElementById('scrollToTopBtn');
+    if (window.scrollY > 200) {
+        btn.style.display = 'flex';
+    } else {
+        btn.style.display = 'none';
+    }
+});
+
+// Scroll suave al inicio al hacer clic
+document.getElementById('scrollToTopBtn').addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
