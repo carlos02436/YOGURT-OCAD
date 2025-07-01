@@ -181,3 +181,14 @@
     color: white;
     transition: all 0.3s ease-in-out;
 }
+
+/* Logo y Titulo Responsivo */
+@media (max-width: 600px) {
+    .logo {
+        height: 180px;
+    }
+    .titulo, h1, .main-title {
+        font-size: 1.5rem !important;
+        text-align: center;
+    }
+}
