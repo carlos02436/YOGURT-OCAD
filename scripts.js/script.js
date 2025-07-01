@@ -133,7 +133,7 @@ document.getElementById('pedidoForm').addEventListener('submit', function (e) {
         `*Total a Pagar:* ${totalFormateado}`;
 
     // Abre WhatsApp Web con el mensaje prellenado
-    const url = `https://web.whatsapp.com/send?phone=573175625131&text=${encodeURIComponent(mensaje)}`;
+    const url = `https://web.whatsapp.com/send?phone=573146145727&text=${encodeURIComponent(mensaje)}`;// modifica el número de teléfono según sea necesario
     window.open(url, '_blank');
 
     // Reinicia el formulario y la selección de productos
@@ -200,32 +200,36 @@ document.getElementById('searchForm').addEventListener('submit', function (e) {
     }
 });
 
-// Contador del carrito
-// Inicializa el contador de productos en el carrito
-let cartCount = 0;
+/**
+ * Contador del carrito basado en el HTML proporcionado.
+ * El contador se muestra en el <span class="badge bg-primary ms-2">0</span> junto al ícono del carrito.
+ */
 
-// Referencia al span del contador
-const badgeElement = document.querySelector('#cart-count .badge');
+// Referencia al badge del contador
+const cartBadge = document.querySelector('.d-flex.align-items-center .badge.bg-primary');
+
+// Inicializa el contador
+let cartCount = 0;
 
 // Función para actualizar el contador visual
 function actualizarContador() {
-    if (badgeElement) {
-        badgeElement.textContent = cartCount;
+    if (cartBadge) {
+        cartBadge.textContent = cartCount;
     }
 }
 
-// Ejemplo: función para agregar producto al carrito y actualizar contador
+// Función para agregar producto al carrito y actualizar contador
 function agregarAlCarrito() {
     cartCount++;
     actualizarContador();
 }
 
-// Simulación: asignar el evento a los botones que agregan producto
+// Asignar el evento a los botones que agregan producto (deben tener la clase .add-to-cart-btn)
 document.querySelectorAll('.add-to-cart-btn').forEach(button => {
     button.addEventListener('click', agregarAlCarrito);
 });
 
-// Si quieres, puedes llamar actualizarContador() al inicio para mostrar el valor correcto desde el inicio
+// Llama actualizarContador() al inicio para mostrar el valor correcto desde el inicio
 actualizarContador();
 
 // Evento que controla el menú de navegación para que cierre al hacer clic en un enlace
@@ -245,19 +249,33 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Código responsivo en Celulares
-// Cierra el menú colapsado en móviles al seleccionar una opción
-document.querySelectorAll('.nav-link').forEach(link => {
-  link.addEventListener('click', () => {
-    const navbarCollapse = document.querySelector('.navbar-collapse');
-    const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-    if (bsCollapse && navbarCollapse.classList.contains('show')) {
-      bsCollapse.hide();
+// Código responsivo para dispositivos móviles y tablets y ajusta el tamaño del logo y el título del encabezado
+function ajustarEncabezado() {
+    const logo = document.getElementById('logo-ocad');
+    const titulo = document.getElementById('titulo-ocad');
+    if (!logo || !titulo) return;
+
+    if (window.innerWidth < 576) { // Celulares
+        logo.style.width = '40px';
+        logo.style.height = '40px';
+        titulo.style.fontSize = '1.1rem';
+    } else if (window.innerWidth < 992) { // Tablets
+        logo.style.width = '55px';
+        logo.style.height = '55px';
+        titulo.style.fontSize = '1.3rem';
+    } else { // Escritorio
+        logo.style.width = '70px';
+        logo.style.height = '70px';
+        titulo.style.fontSize = '1.7rem';
     }
-  });
+}
+
+// Ejecuta al cargar y al cambiar el tamaño de la ventana
+window.addEventListener('DOMContentLoaded', ajustarEncabezado);
+window.addEventListener('resize', ajustarEncabezado);
+
+// Código para el botón de "Volver arriba" cuando se hace scroll hacia abajo
+const btnVolverArriba = document.getElementById('btn-volver-arriba');
+btnVolverArriba.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 });
-// Código para el botón de "Volver arriba"
-// Muestra el botón de "Volver arriba" cuando se hace scroll hacia abajo
-window.onscroll = function () {
-  scrollFunction();
-};

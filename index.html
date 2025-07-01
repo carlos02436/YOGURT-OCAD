@@ -15,58 +15,81 @@
 </head>
 
 <body>
-    
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top section"
-    style="background: rgba(255,255,255,0.85); backdrop-filter: blur(6px); box-shadow: 0 2px 12px rgba(0,0,0,0.07);">
-    <div class="container-fluid fw-bold d-flex justify-content-between align-items-center">
-        
-        <!-- Logo y Marca -->
-        <div class="d-flex align-items-center">
-            <img src="img/Logo Yogurt Ocad.png" alt="Logo Yogurt Ocad" class="logo me-2"
-                style="width: 80px; height: 80px;">
-            <a class="navbar-brand" style="font-size: 2rem; font-weight: bold;">YOGURT OCAD</a>
-        </div>
 
-        <!-- Botón Hamburguesa -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top section"
+        style="background: rgba(255,255,255,0.85); backdrop-filter: blur(6px); box-shadow: 0 2px 12px rgba(0,0,0,0.07);">
+        <div class="container-fluid fw-bold d-flex justify-content-between align-items-center">
 
-        <!-- Contenido del Menú -->
-        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-            <ul class="navbar-nav mb-2 mb-lg-0 align-items-lg-center">
-                <li class="nav-item"><a class="nav-link nav-hover" href="#carouselExample">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link nav-hover" href="#nosotros">Nosotros</a></li>
-                <li class="nav-item"><a class="nav-link nav-hover" href="#productos">Productos</a></li>
-                <li class="nav-item"><a class="nav-link nav-hover" href="#testimonios">Testimonios</a></li>
-                <li class="nav-item"><a class="nav-link nav-hover" href="#Pedidos">Pedidos</a></li>
-                <li class="nav-item"><a class="nav-link nav-hover" href="#contacto">Contacto</a></li>
-            </ul>
-
-            <!-- Carrito -->
-            <div class="d-flex align-items-center ms-lg-4 my-2 my-lg-0">
-                <a href="carrito.html">
-                    <img src="img/carrito.png" alt="Carrito"
-                        style="width: 60px; height: 60px; object-fit: contain; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.12));" />
-                </a>
-                <span class="badge bg-primary ms-2" style="font-size: 1rem;">0</span>
+            <!-- Logo y Marca -->
+            <div class="d-flex align-items-center">
+                <img src="img/Logo Yogurt Ocad.png" alt="Logo Yogurt Ocad" class="logo me-2"
+                    style="width: 80px; height: 80px;">
+                <a class="navbar-brand" style="font-size: 2rem; font-weight: bold;">YOGURT OCAD</a>
             </div>
 
-            <!-- Buscador -->
-            <form class="d-flex ms-lg-4 my-2 my-lg-0" role="search" id="searchForm" autocomplete="off">
-                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar"
-                    id="searchInput" />
-                <button class="btn btn-outline-success ver-mas-btn" type="submit">
-                    <i class="bi bi-search"></i>
-                </button>
-            </form>
-        </div>
-    </div>
-</nav>
+            <!-- Botón Hamburguesa -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
+            <!-- Contenido del Menú -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0 align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link nav-hover" href="#carouselExample">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link nav-hover" href="#nosotros">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link nav-hover" href="#productos">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link nav-hover" href="#testimonios">Testimonios</a></li>
+                    <li class="nav-item"><a class="nav-link nav-hover" href="#Pedidos">Pedidos</a></li>
+                    <li class="nav-item"><a class="nav-link nav-hover" href="#contacto">Contacto</a></li>
+                </ul>
+
+                <!-- Carrito -->
+                <div class="d-flex align-items-center ms-lg-4 my-2 my-lg-0">
+                    <a href="carrito.html">
+                        <img src="img/carrito.png" alt="Carrito"
+                            style="width: 60px; height: 60px; object-fit: contain; filter: drop-shadow(0 1px 2px rgba(0,0,0,0.12));" />
+                    </a>
+                    <span class="badge bg-primary ms-2" style="font-size: 1rem;">0</span>
+                </div>
+
+                <!-- Buscador -->
+                <form class="d-flex ms-lg-4 my-2 my-lg-0" role="search" id="searchForm" autocomplete="off">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar"
+                        id="searchInput" />
+                    <button class="btn btn-outline-success ver-mas-btn" type="submit">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Botón Scroll hacia abajo y devuelve al inicio -->
+    <button id="scrollToTopBtn" class="btn btn-primary"
+        style="position:fixed; bottom:40px; right:30px; z-index:9999; width:50px; height:50px; display:none; align-items:center; justify-content:center;">
+        <i class="bi bi-arrow-up fs-3"></i>
+    </button>
+
+    <!-- Código JS para el Botón Scroll hacia abajo y devuelve al inicio -->
+    <script>
+        // Mostrar/ocultar el botón al hacer scroll
+        window.addEventListener('scroll', function () {
+            const btn = document.getElementById('scrollToTopBtn');
+            if (window.scrollY > 200) {
+                btn.style.display = 'flex';
+            } else {
+                btn.style.display = 'none';
+            }
+        });
+
+        // Scroll suave al inicio al hacer clic
+        document.getElementById('scrollToTopBtn').addEventListener('click', function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 
     <!-- Carrusel de imagenes -->
     <section id="Inicio" style="scroll-margin-top: 100px;">
