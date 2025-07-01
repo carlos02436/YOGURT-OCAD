@@ -1,3 +1,15 @@
 .Col {
     color: black;
 }
+
+/* Estilos para dispositivos móviles: Celular */
+@media (max-width: 768px) {
+  .logo {
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  .navbar-brand {
+    font-size: 1.2rem !important;
+  }
+}

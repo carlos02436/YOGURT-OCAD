@@ -122,6 +122,15 @@
     transform: scale(1.1);
 }
 
+/* Logo Sección Nosotros */
+.logo_1 {
+    width: auto;
+    height: 400px;
+    margin: 0 auto;
+    display: block;
+    object-fit: cover;
+}
+
 .navbar {
     position: fixed;
     top: 0;
@@ -269,4 +278,16 @@
     background-color: #198754;
     color: #fff;
     border-color: #198754;
+}
+
+/* Estilos para dispositivos móviles: Celular */
+@media (max-width: 768px) {
+  .logo {
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  .navbar-brand {
+    font-size: 1.2rem !important;
+  }
 }
