@@ -183,12 +183,20 @@
 }
 
 /* Logo y Titulo Responsivo */
-@media (max-width: 600px) {
+@media (max-width: 100px) {
     .logo {
-        height: 180px;
+        height: 80px;
     }
-    .titulo, h1, .main-title {
-        font-size: 1.5rem !important;
+    .titulo .main-title {
+        font-size: 1rem !important;
         text-align: center;
     }
+}
+
+/* Reduce el alto del encabezado */
+.navbar {
+    height: 90px;
+    min-height: 60px;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
 }
