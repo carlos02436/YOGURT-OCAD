@@ -255,14 +255,18 @@ function ajustarEncabezado() {
     const titulo = document.getElementById('titulo-ocad');
     if (!logo || !titulo) return;
 
-    if (window.innerWidth < 576) { // Celulares
-        logo.style.width = '40px';
-        logo.style.height = '40px';
-        titulo.style.fontSize = '1.1rem';
+    if (window.innerWidth < 400) { // Celulares muy pequeños
+        logo.style.width = '28px';
+        logo.style.height = '28px';
+        titulo.style.fontSize = '0.95rem';
+    } else if (window.innerWidth < 576) { // Celulares normales
+        logo.style.width = '34px';
+        logo.style.height = '34px';
+        titulo.style.fontSize = '1.05rem';
     } else if (window.innerWidth < 992) { // Tablets
-        logo.style.width = '55px';
-        logo.style.height = '55px';
-        titulo.style.fontSize = '1.3rem';
+        logo.style.width = '50px';
+        logo.style.height = '50px';
+        titulo.style.fontSize = '1.2rem';
     } else { // Escritorio
         logo.style.width = '70px';
         logo.style.height = '70px';
@@ -273,9 +277,3 @@ function ajustarEncabezado() {
 // Ejecuta al cargar y al cambiar el tamaño de la ventana
 window.addEventListener('DOMContentLoaded', ajustarEncabezado);
 window.addEventListener('resize', ajustarEncabezado);
-
-// Código para el botón de "Volver arriba" cuando se hace scroll hacia abajo
-const btnVolverArriba = document.getElementById('btn-volver-arriba');
-btnVolverArriba.addEventListener('click', function () {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
