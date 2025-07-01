@@ -275,7 +275,21 @@ function ajustarEncabezado() {
 }
 
 // Ejecuta al cargar y al cambiar el tamaño de la ventana
-window.addEventListener('DOMContentLoaded', ajustarEncabezado);
+window.addEventListener('DOMContentLoaded', function() {
+    ajustarEncabezado();
+
+    // Forzar tamaño pequeño en móviles al cargar
+    const isMobile = /android|iphone|ipad|ipod|opera mini|iemobile|mobile/i.test(navigator.userAgent) || window.innerWidth < 576;
+    if (isMobile) {
+        const logo = document.getElementById('logo-ocad');
+        const titulo = document.getElementById('titulo-ocad');
+        if (logo && titulo) {
+            logo.style.width = '30px';
+            logo.style.height = '30px';
+            titulo.style.fontSize = '0.50rem';
+        }
+    }
+});
 window.addEventListener('resize', ajustarEncabezado);
 
 // Código JS para el Botón Scroll hacia abajo y devuelve al inicio
