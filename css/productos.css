@@ -1,3 +1,4 @@
+/* Estilos generales */
 .header {
     background-color: rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
@@ -120,15 +121,6 @@
 
 .logo:hover {
     transform: scale(1.1);
-}
-
-/* Logo Sección Nosotros */
-.logo_1 {
-    width: auto;
-    height: 400px;
-    margin: 0 auto;
-    display: block;
-    object-fit: cover;
 }
 
 .navbar {

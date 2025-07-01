@@ -24,15 +24,6 @@
     transform: scale(1.1);
 }
 
-.logo_5 {
-    width: auto;
-    height: 400px;
-    margin: 0 auto;
-    display: block;
-    object-fit: cover;
-    transition: 0.5s;
-}
-
 .navbar {
     position: fixed;
     top: 0;
