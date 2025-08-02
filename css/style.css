@@ -36,10 +36,10 @@
 }
 
 .boton-cantidad {
-  font-size: 1rem;
-  padding: 2px 8px;
-  margin: 0 4px;
-  cursor: pointer;
+    font-size: 1rem;
+    padding: 2px 8px;
+    margin: 0 4px;
+    cursor: pointer;
 }
 
 .img {
@@ -177,7 +177,7 @@
     transform: scale(1.2);
 }
 
-/* botones métodos de pago */
+/* Botones métodos de pago */
 .metodo-pago {
     display: inline-block;
     width: 170px;
@@ -188,17 +188,28 @@
     border-radius: 5px;
     background-color: #e4e3f3;
     color: black;
-    text-decoration: none;
     font-weight: bold;
     transition: all 0.3s ease-in-out;
     border: 2px solid #198754;
+    cursor: pointer;
 }
+
 .metodo-pago:hover {
     color: white;
-    font-weight: bold;
     background-color: #198738;
     border-color: #198754;
     box-shadow: 0 0 0 0.1rem rgba(25, 135, 84, 0.25);
+}
+
+.metodo-pago.selected {
+    background-color: #198754;
+    color: white;
+}
+
+.btn-eliminar {
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 /* Efectos y Animaciones para la página */

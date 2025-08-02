@@ -176,24 +176,27 @@
     <section id="productos" class="container my-5" style="scroll-margin-top: 140px;">
         <h2 class="mb-4 fw-bold text-center">Nuestros Productos</h2>
         <div class="row justify-content-center g-4">
+
             <!-- Tarjeta 1 -->
             <div class="col-12 col-sm-6 col-lg-4 d-flex">
                 <div class="card shadow-sm p-3 w-100 producto-card">
                     <img src="img/fresa.jpg" class="card-img-top producto-img" alt="Yogurt de Fresa">
                     <div class="card-body shadow" style="border-radius: 10px;">
-                        <h5 class="card-title">Yogurt de Mora</h5>
+                        <h5 class="card-title producto-nombre">Yogurt de Mora</h5>
                         <p class="card-text">Delicioso yogurt artesanal con moras frescas, por 1Lt.</p>
                         <div class="mb-2">
                             <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
                             <span class="ms-2">(4.0)</span>
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
-                            <span class="fw-bold fs-5">$10.000 COP</span>
-                            <div>
-                                <button class="m-2 btn btn-primary btn-sm me-2 comprar-btn"
+                            <span class="fw-bold fs-5 producto-precio">$10.000 COP</span>
+                            <div class="d-flex flex-column align-items-end gap-2" style="width: 120px;">
+                                <button class="btn btn-primary btn-sm comprar-btn w-100" style="min-width: 120px; max-width: 120px;"
                                     onclick="location.href='#Pedidos'">Comprar</button>
-                                <button class="m-2 btn btn-outline-success btn-sm add-to-cart-btn">Añadir al
-                                    carrito</button>
+                                <button class="btn btn-outline-success btn-sm add-to-cart-btn w-100" style="min-width: 120px; max-width: 120px;"
+                                    onclick="agregarAlCarrito({ id: 1, nombre: 'Yogur Mora', precio: 10.000 })">
+                                    Añadir al carrito
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -205,19 +208,21 @@
                 <div class="card shadow-sm p-3 w-100 producto-card">
                     <img src="img/fresa.jpg" class="card-img-top producto-img" alt="Yogurt de Fresa">
                     <div class="card-body shadow" style="border-radius: 10px;">
-                        <h5 class="card-title">Yogurt de Fresa</h5>
+                        <h5 class="card-title producto-nombre">Yogurt de Melocotón</h5>
                         <p class="card-text">Delicioso yogurt artesanal con melocotón, por 1Lt.</p>
                         <div class="mb-2">
                             <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
                             <span class="ms-2">(4.0)</span>
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
-                            <span class="fw-bold fs-5">$10.000 COP</span>
-                            <div>
-                                <button class="m-2 btn btn-primary btn-sm me-2 comprar-btn"
+                            <span class="fw-bold fs-5 producto-precio">$10.000 COP</span>
+                            <div class="d-flex flex-column align-items-end gap-2" style="width: 120px;">
+                                <button class="btn btn-primary btn-sm comprar-btn w-100" style="min-width: 120px; max-width: 120px;"
                                     onclick="location.href='#Pedidos'">Comprar</button>
-                                <button class="m-2 btn btn-outline-success btn-sm add-to-cart-btn">Añadir al
-                                    carrito</button>
+                                <button class="btn btn-outline-success btn-sm add-to-cart-btn w-100" style="min-width: 120px; max-width: 120px;"
+                                    onclick="agregarAlCarrito({ id: 1, nombre: 'Yogur Mora', precio: 10.000 })">
+                                    Añadir al carrito
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -229,19 +234,21 @@
                 <div class="card shadow-sm p-3 w-100 producto-card">
                     <img src="img/fresa.jpg" class="card-img-top producto-img" alt="Yogurt de Fresa">
                     <div class="card-body shadow" style="border-radius: 10px;">
-                        <h5 class="card-title">Yogurt de Fresa</h5>
+                        <h5 class="card-title producto-nombre">Yogurt de Kummis</h5>
                         <p class="card-text">Delicioso yogurt artesanal Kummis, por 1Lt.</p>
                         <div class="mb-2">
                             <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
                             <span class="ms-2">(4.0)</span>
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
-                            <span class="fw-bold fs-5">$10.000 COP</span>
-                            <div>
-                                <button class="m-2 btn btn-primary btn-sm me-2 comprar-btn"
+                            <span class="fw-bold fs-5 producto-precio">$10.000 COP</span>
+                            <div class="d-flex flex-column align-items-end gap-2" style="width: 120px;">
+                                <button class="btn btn-primary btn-sm comprar-btn w-100" style="min-width: 120px; max-width: 120px;"
                                     onclick="location.href='#Pedidos'">Comprar</button>
-                                <button class="m-2 btn btn-outline-success btn-sm add-to-cart-btn">Añadir al
-                                    carrito</button>
+                                <button class="btn btn-outline-success btn-sm add-to-cart-btn w-100" style="min-width: 120px; max-width: 120px;"
+                                    onclick="agregarAlCarrito({ id: 1, nombre: 'Yogur Mora', precio: 10.000 })">
+                                    Añadir al carrito
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -253,19 +260,21 @@
                 <div class="card shadow-sm p-3 w-100 producto-card">
                     <img src="img/fresa.jpg" class="card-img-top producto-img" alt="Yogurt de Fresa">
                     <div class="card-body shadow" style="border-radius: 10px;">
-                        <h5 class="card-title">Yogurt de Fresa</h5>
+                        <h5 class="card-title producto-nombre">Yogurt de Fresa</h5>
                         <p class="card-text">Delicioso yogurt artesanal con fresas frescas, por 1Lt.</p>
                         <div class="mb-2">
                             <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
                             <span class="ms-2">(4.0)</span>
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
-                            <span class="fw-bold fs-5">$10.000 COP</span>
-                            <div>
-                                <button class="m-2 btn btn-primary btn-sm me-2 comprar-btn"
+                            <span class="fw-bold fs-5 producto-precio">$10.000 COP</span>
+                            <div class="d-flex flex-column align-items-end gap-2" style="width: 120px;">
+                                <button class="btn btn-primary btn-sm comprar-btn w-100" style="min-width: 120px; max-width: 120px;"
                                     onclick="location.href='#Pedidos'">Comprar</button>
-                                <button class="m-2 btn btn-outline-success btn-sm add-to-cart-btn">Añadir al
-                                    carrito</button>
+                                <button class="btn btn-outline-success btn-sm add-to-cart-btn w-100" style="min-width: 120px; max-width: 120px;"
+                                    onclick="agregarAlCarrito({ id: 1, nombre: 'Yogur Mora', precio: 10.000 })">
+                                    Añadir al carrito
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -277,19 +286,21 @@
                 <div class="card shadow-sm p-3 w-100 producto-card">
                     <img src="img/fresa.jpg" class="card-img-top producto-img" alt="Yogurt de Fresa">
                     <div class="card-body shadow" style="border-radius: 10px;">
-                        <h5 class="card-title">Yogurt de Fresa</h5>
+                        <h5 class="card-title producto-nombre">Yogurt de Fresa</h5>
                         <p class="card-text">Delicioso yogurt artesanal con fresas frescas, por 1Lt.</p>
                         <div class="mb-2">
                             <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
                             <span class="ms-2">(4.0)</span>
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
-                            <span class="fw-bold fs-5">$10.000 COP</span>
-                            <div>
-                                <button class="m-2 btn btn-primary btn-sm me-2 comprar-btn"
+                            <span class="fw-bold fs-5 producto-precio">$10.000 COP</span>
+                            <div class="d-flex flex-column align-items-end gap-2" style="width: 120px;">
+                                <button class="btn btn-primary btn-sm comprar-btn w-100" style="min-width: 120px; max-width: 120px;"
                                     onclick="location.href='#Pedidos'">Comprar</button>
-                                <button class="m-2 btn btn-outline-success btn-sm add-to-cart-btn">Añadir al
-                                    carrito</button>
+                                <button class="btn btn-outline-success btn-sm add-to-cart-btn w-100" style="min-width: 120px; max-width: 120px;"
+                                    onclick="agregarAlCarrito({ id: 1, nombre: 'Yogur Mora', precio: 10.000 })">
+                                    Añadir al carrito
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -301,19 +312,21 @@
                 <div class="card shadow-sm p-3 w-100 producto-card">
                     <img src="img/fresa.jpg" class="card-img-top producto-img" alt="Yogurt de Fresa">
                     <div class="card-body shadow" style="border-radius: 10px;">
-                        <h5 class="card-title">Yogurt de Fresa</h5>
+                        <h5 class="card-title producto-nombre">Yogurt de Fresa</h5>
                         <p class="card-text">Delicioso yogurt artesanal con fresas frescas, por 1Lt.</p>
                         <div class="mb-2">
                             <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
                             <span class="ms-2">(4.0)</span>
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
-                            <span class="fw-bold fs-5">$10.000 COP</span>
-                            <div>
-                                <button class="m-2 btn btn-primary btn-sm me-2 comprar-btn"
+                            <span class="fw-bold fs-5 producto-precio">$10.000 COP</span>
+                            <div class="d-flex flex-column align-items-end gap-2" style="width: 120px;">
+                                <button class="btn btn-primary btn-sm comprar-btn w-100" style="min-width: 120px; max-width: 120px;"
                                     onclick="location.href='#Pedidos'">Comprar</button>
-                                <button class="m-2 btn btn-outline-success btn-sm add-to-cart-btn">Añadir al
-                                    carrito</button>
+                                <button class="btn btn-outline-success btn-sm add-to-cart-btn w-100" style="min-width: 120px; max-width: 120px;"
+                                    onclick="agregarAlCarrito({ id: 1, nombre: 'Yogur Mora', precio: 10.000 })">
+                                    Añadir al carrito
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -321,7 +334,7 @@
             </div>
         </div>
 
-        <!-- Botón VER MÁS centrado al final -->
+        <!-- Botón ¡Ir al carrito! -->
         <div class="row mt-4">
             <div class="col text-center">
                 <a href="carrito.html" class="btn btn-comprar-custom btn-lg fw-bold" target="_self" rel="noopener">
@@ -635,6 +648,49 @@
 
     <!-- Script personalizado JS -->
     <script src="scripts.js/script.js"></script>
+
+    <script>
+        // Función para calcular el total del carrito
+        function calcularTotal() {
+            const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+            let total = 0;
+            document.addEventListener("DOMContentLoaded", function () {
+                const botonesAgregar = document.querySelectorAll(".add-to-cart-btn");
+
+                botonesAgregar.forEach(boton => {
+                    boton.addEventListener("click", function () {
+                        const card = boton.closest(".producto-card");
+                        const nombre = card.querySelector(".producto-nombre").innerText;
+                        const precioTexto = card.querySelector(".producto-precio").innerText;
+                        const precio = parseInt(precioTexto.replace(/\D/g, '')); // Quita '$', '.' y 'COP'
+                        const imagen = card.querySelector(".producto-img").getAttribute("src");
+
+                        const producto = {
+                            nombre,
+                            precio,
+                            imagen,
+                            cantidad: 1
+                        };
+
+                        // Obtener carrito actual
+                        let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+                        // Verificar si ya está el producto
+                        const index = carrito.findIndex(p => p.nombre === producto.nombre);
+                        if (index !== -1) {
+                            carrito[index].cantidad += 1;
+                        } else {
+                            carrito.push(producto);
+                        }
+
+                        localStorage.setItem("carrito", JSON.stringify(carrito));
+                        alert(`${nombre} fue añadido al carrito.`);
+                    });
+                });
+            });
+        }
+    </script>
+
 </body>
 
 </html>
