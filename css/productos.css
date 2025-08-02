@@ -1,4 +1,19 @@
 /* Estilos generales */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
 .header {
     background-color: rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
@@ -183,65 +198,6 @@
     background: #28a745;
 }
 
-/* Estilos de las Tarjetas */
-.producto-card {
-    transition: transform 0.25s, box-shadow 0.25s;
-}
-
-.producto-card:hover {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18), 0 1.5px 8px rgba(0, 0, 0, 0.12);
-    z-index: 2;
-}
-
-.producto-card .producto-img {
-    transition: transform 0.3s, filter 0.3s;
-}
-
-.producto-card:hover .producto-img {
-    transform: scale(1.07) rotate(-2deg);
-    filter: brightness(1.08) saturate(1.2);
-}
-
-.img1 {
-    width: auto;
-    height: 550px;
-    margin: 0 auto;
-    display: block;
-    object-fit: cover;
-    transition: 0.5s;
-}
-
-.img1:hover {
-    transform: scale(1.02);
-}
-
-/* Hace la imagen sin fondo (si el PNG tiene transparencia) */
-.producto-img-sin-fondo {
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
-    transition: box-shadow 0.3s, transform 0.3s;
-    background: transparent !important;
-}
-
-.producto-img-sin-fondo:hover {
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.28);
-    transform: scale(1.05);
-    background: transparent !important;
-}
-
-.formulario contacto {
-    width: 350px;
-    height: 350px;
-    transition: transform 0.4s;
-    display: block;
-    margin: 0 auto;
-    object-fit: cover;
-}
-
-.formulario.contacto:hover {
-    transform: scale(1.03) rotate(-1deg);
-}
-
 /* Tamaño de los Iconos de las Redes Sociales */
 .social-icon {
     width: 24px;
@@ -251,16 +207,6 @@
 
 .social-icon:hover {
     transform: scale(1.2);
-}
-
-/* boton ver más */
-.ver-mas-btn:hover,
-.ver-mas-btn:focus {
-    color: #fff;
-    background-color: #198754;
-    border-color: #198754;
-    box-shadow: 0 0 0 0.1rem rgba(25, 135, 84, 0.25);
-    transition: all 0.3s ease-in-out;
 }
 
 /* Efectos y Animaciones para la página */
@@ -276,21 +222,6 @@
 
 [transition-style="in:circle:top-right"] {
     animation: 2.5s cubic-bezier(.25, 1, .30, 1) circle-in-top-right both;
-}
-
-/* Efectos Botón COMPRAR */
-.btn-comprar-custom {
-    background-color: #fff;
-    color: #198754;
-    border: 2px solid #198754;
-    transition: background 0.2s, color 0.2s;
-}
-
-.btn-comprar-custom:hover,
-.btn-comprar-custom:focus {
-    background-color: #198754;
-    color: #fff;
-    border-color: #198754;
 }
 
 /* Estilos para dispositivos móviles: Celular */
