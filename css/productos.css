@@ -5,6 +5,28 @@
     z-index: 1;
 }
 
+/* efecto vidrio */
+.glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    color: #fff;
+}
+
+/* Efecto hover del boton de scroll */
+#scrollToTopBtn {
+    background-color: #011c87;
+    color: white;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #322cf2;
+    color: white;
+}
+
 /* Tarjetas */
 .card {
     position: relative;
