@@ -225,7 +225,6 @@
         const cantidadTotalEl = document.getElementById('cantidad');
         const precioTotalEl = document.getElementById('precio');
 
-        // Función para mostrar carrito
         function mostrarCarrito() {
             if (carrito.length === 0) {
                 alertaVacio.classList.remove('d-none');
@@ -279,7 +278,7 @@
             precioTotalEl.textContent = precioTotal.toLocaleString('es-CO', { style: 'currency', currency: 'COP' });
         }
 
-        // Funciones de acciones
+        // Funciones de control
         function agregarUno(index) {
             carrito[index].cantidad++;
             guardarYRefrescar();
@@ -304,7 +303,6 @@
             guardarYRefrescar();
         }
 
-        // Guarda en localStorage y actualiza vista
         function guardarYRefrescar() {
             localStorage.setItem('carrito', JSON.stringify(carrito));
             mostrarCarrito();
@@ -313,7 +311,6 @@
         // Mostrar el carrito al cargar
         mostrarCarrito();
     </script>
-
 
 </body>
 
