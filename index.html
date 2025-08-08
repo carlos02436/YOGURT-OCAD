@@ -122,17 +122,16 @@
 
     <!-- Carrito Flotente -->
     <script>
-        // Función para actualizar el contador
+        // icono del carrito de compras
         function actualizarContadorCarrito() {
             const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
             const totalItems = carrito.reduce((total, item) => {
-                const cantidad = parseInt(item.cantidad) || 0;
+                const cantidad = parseInt(item.cantidad) || 0; // Evita NaN
                 return total + cantidad;
             }, 0);
             document.getElementById('contador-carrito').textContent = totalItems;
         }
 
-        // Función para agregar producto
         function agregarAlCarrito(producto) {
             const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
             const item = carrito.find(p => p.id === producto.id);
@@ -144,18 +143,10 @@
             }
 
             localStorage.setItem('carrito', JSON.stringify(carrito));
-            actualizarContadorCarrito(); // Refresca el contador de inmediato
+            actualizarContadorCarrito();
         }
-
-        // Detectar cambios en localStorage (en caso de que otro script o pestaña lo modifique)
-        window.addEventListener('storage', function (e) {
-            if (e.key === 'carrito') {
-                actualizarContadorCarrito();
-            }
-        });
-
-        // Inicializar contador al cargar la página
-        document.addEventListener('DOMContentLoaded', actualizarContadorCarrito);
+        // Inicializar contador al cargar
+        actualizarContadorCarrito();// final el icono carrito de compras
     </script>
 
     <!-- Sección Sobre Nosotros -->
@@ -700,26 +691,6 @@
 
     <!-- Script personalizado JS -->
     <script src="scripts/script.js"></script>
-
-    <!-- Script para el carrito de compras -->
-    <script src="scripts/carrito.js"></script>
-
-    <!-- Script para agregar productos al carrito -->
-    <script>
-        function agregarAlCarrito(producto) {
-            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-            const item = carrito.find(p => p.id === producto.id);
-
-            if (item) {
-                item.cantidad++;
-            } else {
-                carrito.push({ ...producto, cantidad: 1 });
-            }
-
-            localStorage.setItem('carrito', JSON.stringify(carrito));
-            alert('Producto agregado al carrito.');
-        }
-    </script>
 
 </body>
 
