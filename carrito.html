@@ -217,7 +217,6 @@
     <!-- Script personalizado JS -->
     <script src="scripts/script.js"></script>
 
-    <!-- Script para el carrito -->
     <script>
         const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
         const contenedor = document.getElementById('contenido-carrito');
@@ -226,11 +225,15 @@
         const cantidadTotalEl = document.getElementById('cantidad');
         const precioTotalEl = document.getElementById('precio');
 
-        if (carrito.length === 0) {
-            alertaVacio.classList.remove('d-none');
-            contenedor.innerHTML = '';
-            totalesDiv.classList.add('d-none');
-        } else {
+        // Función para mostrar carrito
+        function mostrarCarrito() {
+            if (carrito.length === 0) {
+                alertaVacio.classList.remove('d-none');
+                contenedor.innerHTML = '';
+                totalesDiv.classList.add('d-none');
+                return;
+            }
+
             alertaVacio.classList.add('d-none');
             totalesDiv.classList.remove('d-none');
 
@@ -238,35 +241,79 @@
             let precioTotal = 0;
 
             let html = `<table class="table table-bordered">
-                  <thead>
-                    <tr>
-                      <th>Producto</th>
-                      <th>Precio</th>
-                      <th>Cantidad</th>
-                      <th>Subtotal</th>
-                    </tr>
-                  </thead>
-                  <tbody>`;
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>`;
 
-            carrito.forEach(item => {
+            carrito.forEach((item, index) => {
                 const subtotal = item.precio * item.cantidad;
                 cantidadTotal += item.cantidad;
                 precioTotal += subtotal;
 
-                html += `<tr>
-        <td>${item.nombre}</td>
-        <td>$${item.precio.toLocaleString()}</td>
-        <td>${item.cantidad}</td>
-        <td>$${subtotal.toLocaleString()}</td>
-      </tr>`;
+                html += `
+            <tr>
+                <td>${item.nombre}</td>
+                <td>${item.precio.toLocaleString('es-CO', { style: 'currency', currency: 'COP' })}</td>
+                <td>${item.cantidad}</td>
+                <td>${subtotal.toLocaleString('es-CO', { style: 'currency', currency: 'COP' })}</td>
+                <td>
+                    <button class="btn btn-sm btn-success" onclick="agregarUno(${index})">+</button>
+                    <button class="btn btn-sm btn-warning" onclick="quitarUno(${index})">-</button>
+                    <button class="btn btn-sm btn-danger" onclick="eliminarProducto(${index})">Eliminar</button>
+                </td>
+            </tr>`;
             });
 
-            html += `</tbody></table>`;
+            html += `</tbody></table>
+             <button class="btn btn-danger" onclick="vaciarCarrito()">Vaciar Carrito</button>`;
             contenedor.innerHTML = html;
+
             cantidadTotalEl.textContent = cantidadTotal;
-            precioTotalEl.textContent = `$ ${precioTotal.toLocaleString()}`;
+            precioTotalEl.textContent = precioTotal.toLocaleString('es-CO', { style: 'currency', currency: 'COP' });
         }
+
+        // Funciones de acciones
+        function agregarUno(index) {
+            carrito[index].cantidad++;
+            guardarYRefrescar();
+        }
+
+        function quitarUno(index) {
+            if (carrito[index].cantidad > 1) {
+                carrito[index].cantidad--;
+            } else {
+                carrito.splice(index, 1);
+            }
+            guardarYRefrescar();
+        }
+
+        function eliminarProducto(index) {
+            carrito.splice(index, 1);
+            guardarYRefrescar();
+        }
+
+        function vaciarCarrito() {
+            carrito.length = 0;
+            guardarYRefrescar();
+        }
+
+        // Guarda en localStorage y actualiza vista
+        function guardarYRefrescar() {
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            mostrarCarrito();
+        }
+
+        // Mostrar el carrito al cargar
+        mostrarCarrito();
     </script>
+
 
 </body>
 

@@ -661,26 +661,27 @@
 
     <!-- Script para el carrito de compras -->
     <script src="scripts/carrito.js"></script>
+
+    <!-- Script para agregar productos al carrito -->
     <script>
         function agregarAlCarrito(producto) {
-            // Leer carrito existente o inicializar
-            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            // Obtiene el carrito desde localStorage o inicializa un arreglo vacío si no existe
+            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-            // Verificar si ya está agregado
-            const index = carrito.findIndex(item => item.id === producto.id);
-            if (index !== -1) {
-                carrito[index].cantidad += 1;
-            } else {
-                carrito.push({ ...producto, cantidad: 1 });
-            }
+            // Busca si el producto ya está en el carrito
+            const item = carrito.find(p => p.id === producto.id);
 
-            // Guardar en localStorage
+            // Si existe, aumenta la cantidad; si no, lo agrega con cantidad inicial de 1
+            item ? item.cantidad++ : carrito.push({ ...producto, cantidad: 1 });
+
+            // Guarda el carrito actualizado en localStorage
             localStorage.setItem('carrito', JSON.stringify(carrito));
 
-            // Redireccionar al carrito
-            window.location.href = "carrito.html#carrito-section";
+            // Notifica al usuario que el producto fue agregado
+            alert('Producto agregado al carrito.');
         }
     </script>
+
 
 </body>
 
