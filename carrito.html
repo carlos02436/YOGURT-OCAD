@@ -39,7 +39,7 @@
             <!-- Contenido del Menú -->
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-2 mb-lg-0 align-items-lg-center">
-                    <li class="nav-item"><a class="nav-link nav-hover" href="index.html#carouselExample">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link nav-hover" href="index.html#productos">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link nav-hover" href="#carrito-section">carrito</a></li>
                     <li class="nav-item"><a class="nav-link nav-hover" href="preparacion.html">Preparación</a></li>
                     <li class="nav-item"><a class="nav-link nav-hover" href="index.html#testimonios">Testimonios</a>
@@ -47,13 +47,6 @@
                     <li class="nav-item"><a class="nav-link nav-hover" href="index.html#Pedidos">Pedidos</a></li>
                     <li class="nav-item"><a class="nav-link nav-hover" href="#contacto">Contacto</a></li>
                 </ul>
-
-                <!-- Carrito -->
-                <div class="d-flex align-items-center ms-lg-4 my-2 my-lg-0">
-                    <a href="carrito.html#carrito-section">
-                        🛒<span id="contador-carrito" class="badge bg-primary">0</span>
-                    </a>
-                </div>
 
                 <!-- Buscador -->
                 <form class="d-flex ms-lg-4 my-2 my-lg-0" role="search" id="searchForm" autocomplete="off">
@@ -217,6 +210,7 @@
     <!-- Script personalizado JS -->
     <script src="scripts/script.js"></script>
 
+    <!-- Script para el carrito de compras -->
     <script>
         const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
         const contenedor = document.getElementById('contenido-carrito');
@@ -278,7 +272,6 @@
             precioTotalEl.textContent = precioTotal.toLocaleString('es-CO', { style: 'currency', currency: 'COP' });
         }
 
-        // Funciones de control
         function agregarUno(index) {
             carrito[index].cantidad++;
             guardarYRefrescar();
@@ -308,7 +301,6 @@
             mostrarCarrito();
         }
 
-        // Mostrar el carrito al cargar
         mostrarCarrito();
     </script>
 

@@ -294,3 +294,19 @@
         margin-bottom: 8px;
     }
 }
+
+    #carrito-flotante {
+        position: fixed;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: white;
+        padding: 10px;
+        border-radius: 50%;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        z-index: 9999;
+    }
+
+    #carrito-flotante:hover {
+        background: #f0f0f0;
+    }

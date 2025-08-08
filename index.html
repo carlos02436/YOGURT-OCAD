@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome para el ícono -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="img/Logo Yogurt Ocad.png" rel="icon">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -46,13 +48,6 @@
                     <li class="nav-item"><a class="nav-link nav-hover" href="#Pedidos">Pedidos</a></li>
                     <li class="nav-item"><a class="nav-link nav-hover" href="#contacto">Contacto</a></li>
                 </ul>
-
-                <!-- Carrito -->
-                <div class="d-flex align-items-center ms-lg-4 my-2 my-lg-0">
-                    <a href="carrito.html#carrito-section">
-                        🛒<span id="contador-carrito" class="badge bg-primary">0</span>
-                    </a>
-                </div>
 
                 <!-- Buscador -->
                 <form class="d-flex ms-lg-4 my-2 my-lg-0" role="search" id="searchForm" autocomplete="off">
@@ -115,6 +110,53 @@
         </div>
         </div>
     </section>
+
+    <!-- Icono Carrito de Compras Flotante -->
+    <div id="carrito-flotante">
+        <a href="carrito.html" style="position: relative; text-decoration: none; color: black;">
+            <i class="fas fa-shopping-cart fa-2x"></i>
+            <span id="contador-carrito" style="position: absolute; top: -8px; right: -12px; background: red; color: white;
+                        border-radius: 50%; padding: 2px 6px; font-size: 12px;">0</span>
+        </a>
+    </div>
+
+    <!-- Carrito Flotente -->
+    <script>
+        // Función para actualizar el contador
+        function actualizarContadorCarrito() {
+            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            const totalItems = carrito.reduce((total, item) => {
+                const cantidad = parseInt(item.cantidad) || 0;
+                return total + cantidad;
+            }, 0);
+            document.getElementById('contador-carrito').textContent = totalItems;
+        }
+
+        // Función para agregar producto
+        function agregarAlCarrito(producto) {
+            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            const item = carrito.find(p => p.id === producto.id);
+
+            if (item) {
+                item.cantidad++;
+            } else {
+                carrito.push({ ...producto, cantidad: 1 });
+            }
+
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            actualizarContadorCarrito(); // Refresca el contador de inmediato
+        }
+
+        // Detectar cambios en localStorage (en caso de que otro script o pestaña lo modifique)
+        window.addEventListener('storage', function (e) {
+            if (e.key === 'carrito') {
+                actualizarContadorCarrito();
+            }
+        });
+
+        // Inicializar contador al cargar la página
+        document.addEventListener('DOMContentLoaded', actualizarContadorCarrito);
+    </script>
 
     <!-- Sección Sobre Nosotros -->
     <section id="nosotros" class="container my-5" style="scroll-margin-top: 140px;">
@@ -665,23 +707,20 @@
     <!-- Script para agregar productos al carrito -->
     <script>
         function agregarAlCarrito(producto) {
-            // Obtiene el carrito desde localStorage o inicializa un arreglo vacío si no existe
             const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-
-            // Busca si el producto ya está en el carrito
             const item = carrito.find(p => p.id === producto.id);
 
-            // Si existe, aumenta la cantidad; si no, lo agrega con cantidad inicial de 1
-            item ? item.cantidad++ : carrito.push({ ...producto, cantidad: 1 });
+            if (item) {
+                item.cantidad++;
+            } else {
+                carrito.push({ ...producto, cantidad: 1 });
+            }
 
-            // Guarda el carrito actualizado en localStorage
             localStorage.setItem('carrito', JSON.stringify(carrito));
-
-            // Notifica al usuario que el producto fue agregado
             alert('Producto agregado al carrito.');
         }
     </script>
-    
+
 </body>
 
 </html>
