@@ -185,3 +185,27 @@ document.getElementById('searchForm').addEventListener('submit', function (e) {
         alert('No se encontraron resultados para: ' + query);
     }
 });// finaliza el buscador de productos
+
+
+// cerrar el menu al seleccionar una de las opciones de navegación
+document.addEventListener('DOMContentLoaded', function () {
+    const navLinks = document.querySelectorAll('.nav-link');
+    const navbarCollapse = document.getElementById('navbarNav');
+
+    navLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+
+            // Verificar si el menú está visible (modo móvil)
+            const isVisible = window.getComputedStyle(navbarCollapse).display !== 'none';
+
+            if (isVisible && navbarCollapse.classList.contains('show')) {
+
+                // Cerrar el menú usando Collapse de Bootstrap
+                const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                    toggle: false
+                });
+                bsCollapse.hide();
+            }
+        });
+    });
+});

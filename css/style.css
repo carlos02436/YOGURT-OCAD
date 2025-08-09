@@ -299,14 +299,16 @@
         position: fixed;
         right: 20px;
         top: 50%;
-        transform: translateY(-50%);
         background: white;
         padding: 10px;
-        border-radius: 50%;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        border-radius: 64px 40px 16px 96px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        border: 2px solid #322cf2;
         z-index: 9999;
+        transition: all 0.3s ease-in-out;
     }
 
     #carrito-flotante:hover {
+        transform: scale(1.05);
         background: #f0f0f0;
     }

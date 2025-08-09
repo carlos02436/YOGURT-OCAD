@@ -233,18 +233,39 @@
             let cantidadTotal = 0;
             let precioTotal = 0;
 
-            let html = `<table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Producto</th>
-                <th>Precio</th>
-                <th>Cantidad</th>
-                <th>Subtotal</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>`;
+            let html = `
+            <style>
+                table {
+                    border-collapse: collapse;
+                    width: 100%;
+                    border: 3px double #000; /* bordes exteriores más gruesos y dobles */
+                }
+                thead th {
+                    background-color: #004080; /* azul oscuro */
+                    color: white; /* letras blancas */
+                    font-weight: bold;
+                    text-align: center;
+                    border: 2px double #000; /* borde doble y más grueso para encabezados */
+                    padding: 8px;
+                }
+                tbody td {
+                    border: 2px double #000; /* doble línea para las celdas */
+                    padding: 6px;
+                }
+            </style>
 
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Subtotal</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+            `;
             carrito.forEach((item, index) => {
                 const subtotal = item.precio * item.cantidad;
                 cantidadTotal += item.cantidad;
