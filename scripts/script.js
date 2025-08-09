@@ -187,25 +187,18 @@ document.getElementById('searchForm').addEventListener('submit', function (e) {
 });// finaliza el buscador de productos
 
 
-// cerrar el menu al seleccionar una de las opciones de navegación
-document.addEventListener('DOMContentLoaded', function () {
-    const navLinks = document.querySelectorAll('.nav-link');
-    const navbarCollapse = document.getElementById('navbarNav');
-
-    navLinks.forEach(function (link) {
-        link.addEventListener('click', function () {
-
-            // Verificar si el menú está visible (modo móvil)
-            const isVisible = window.getComputedStyle(navbarCollapse).display !== 'none';
-
-            if (isVisible && navbarCollapse.classList.contains('show')) {
-
-                // Cerrar el menú usando Collapse de Bootstrap
-                const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-                    toggle: false
-                });
-                bsCollapse.hide();
+// Cierra el menú hamburguesa al dar clic en un link del navbar (excepto "Más")
+document.querySelectorAll('.navbar-collapse .nav-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+        // Si NO es el botón "Más", cierra el menú hamburguesa
+        if (!link.classList.contains('dropdown-toggle')) {
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            if (navbarCollapse.classList.contains('show')) {
+                const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+                if (bsCollapse) {
+                    bsCollapse.hide();
+                }
             }
-        });
+        }
     });
 });
