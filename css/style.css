@@ -1,370 +1,396 @@
-/* efecto vidrio */
-.glass-card {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-    color: #fff;
-}
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-image: url(../img/fondo07.jpg);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            position: relative;
+        }
 
-/* Efecto hover del boton de scroll */
-#scrollToTopBtn {
-    background-color: #011c87;
-    color: white;
-}
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.85);
+            z-index: -1;
+        }
 
-#scrollToTopBtn:hover {
-    background-color: #322cf2;
-    color: white;
-}
+        /* efecto vidrio */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+            color: #fff;
+        }
 
-/* Efectos Botón COMPRAR */
-.btn-comprar-custom {
-    background-color: #fff;
-    color: #198754;
-    border: 2px solid #198754;
-    transition: background 0.2s, color 0.2s;
-}
+        /* Efecto hover del boton de scroll */
+        #scrollToTopBtn {
+            background-color: #011c87;
+            color: white;
+        }
 
-.btn-comprar-custom:hover,
-.btn-comprar-custom:focus {
-    background-color: #198754;
-    color: #fff;
-    border-color: #198754;
-}
+        #scrollToTopBtn:hover {
+            background-color: #322cf2;
+            color: white;
+        }
 
-.boton-cantidad {
-    font-size: 1rem;
-    padding: 2px 8px;
-    margin: 0 4px;
-    cursor: pointer;
-}
+        /* Efectos Botón COMPRAR */
+        .btn-comprar-custom {
+            background-color: #fff;
+            color: #198754;
+            border: 2px solid #198754;
+            transition: background 0.2s, color 0.2s;
+        }
 
-.img {
-    width: auto;
-    height: 650px;
-    margin: 0 auto;
-    display: block;
-    object-fit: cover;
-    transition: 0.5s;
-}
+        .btn-comprar-custom:hover,
+        .btn-comprar-custom:focus {
+            background-color: #198754;
+            color: #fff;
+            border-color: #198754;
+        }
 
-.img:hover {
-    transform: scale(1.1);
-}
+        .boton-cantidad {
+            font-size: 1rem;
+            padding: 2px 8px;
+            margin: 0 4px;
+            cursor: pointer;
+        }
 
-.logo {
-    width: auto;
-    height: 40px;
-    margin: 0 auto;
-    display: block;
-    object-fit: cover;
-    transition: 0.5s;
-}
+        .img {
+            width: auto;
+            height: 650px;
+            margin: 0 auto;
+            display: block;
+            object-fit: cover;
+            transition: 0.5s;
+        }
 
-.logo:hover {
-    transform: scale(1.1);
-}
+        .img:hover {
+            transform: scale(1.1);
+        }
 
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #333;
-    overflow: hidden;
-    transition: 0.5s;
+        .logo {
+            width: auto;
+            height: 40px;
+            margin: 0 auto;
+            display: block;
+            object-fit: cover;
+            transition: 0.5s;
+        }
 
-}
+        .logo:hover {
+            transform: scale(1.1);
+        }
 
-.nav-hover {
-    position: relative;
-    transition: color 0.2s;
-}
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            overflow: hidden;
+            transition: 0.5s;
 
-.nav-hover::after {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 2px;
-    height: 0;
-    background: #28a745;
-    transition: height 0.2s, background 0.2s;
-}
+        }
 
-.nav-hover:hover,
-.nav-hover:focus {
-    color: #28a745 !important;
-    background: none !important;
-}
+        .nav-hover {
+            position: relative;
+            transition: color 0.2s;
+        }
 
-.nav-hover:hover::after,
-.nav-hover:focus::after {
-    height: 3px;
-    background: #28a745;
-}
+        .nav-hover::after {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 2px;
+            height: 0;
+            background: #28a745;
+            transition: height 0.2s, background 0.2s;
+        }
 
-/* Estilos de las Tarjetas */
-.producto-card {
-    transition: transform 0.25s, box-shadow 0.25s;
-}
+        .nav-hover:hover,
+        .nav-hover:focus {
+            color: #28a745 !important;
+            background: none !important;
+        }
 
-.producto-card:hover {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18), 0 1.5px 8px rgba(0, 0, 0, 0.12);
-    z-index: 2;
-}
+        .nav-hover:hover::after,
+        .nav-hover:focus::after {
+            height: 3px;
+            background: #28a745;
+        }
 
-.producto-card .producto-img {
-    transition: transform 0.3s, filter 0.3s;
-}
+        /* Estilos de las Tarjetas */
+        .producto-card {
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
 
-.producto-card:hover .producto-img {
-    transform: scale(1.07) rotate(-2deg);
-    filter: brightness(1.08) saturate(1.2);
-}
+        .producto-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18), 0 1.5px 8px rgba(0, 0, 0, 0.12);
+            z-index: 2;
+        }
 
-.img1 {
-    width: auto;
-    height: 550px;
-    margin: 0 auto;
-    display: block;
-    object-fit: cover;
-    transition: 0.5s;
-}
+        .producto-card .producto-img {
+            transition: transform 0.3s, filter 0.3s;
+        }
 
-.img1:hover {
-    transform: scale(1.02);
-}
+        .producto-card:hover .producto-img {
+            transform: scale(1.07) rotate(-2deg);
+            filter: brightness(1.08) saturate(1.2);
+        }
 
-/* Hace la imagen sin fondo (si el PNG tiene transparencia) */
-.producto-img-sin-fondo {
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
-    transition: box-shadow 0.3s, transform 0.3s;
-    background: transparent !important;
-}
+        .img1 {
+            width: auto;
+            height: 550px;
+            margin: 0 auto;
+            display: block;
+            object-fit: cover;
+            transition: 0.5s;
+        }
 
-.producto-img-sin-fondo:hover {
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.28);
-    transform: scale(1.05);
-    background: transparent !important;
-}
+        .img1:hover {
+            transform: scale(1.02);
+        }
 
-.formulario contacto {
-    width: 350px;
-    height: 350px;
-    transition: transform 0.4s;
-    display: block;
-    margin: 0 auto;
-    object-fit: cover;
-}
+        /* Hace la imagen sin fondo (si el PNG tiene transparencia) */
+        .producto-img-sin-fondo {
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+            transition: box-shadow 0.3s, transform 0.3s;
+            background: transparent !important;
+        }
 
-.formulario.contacto:hover {
-    transform: scale(1.03) rotate(-1deg);
-}
+        .producto-img-sin-fondo:hover {
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.28);
+            transform: scale(1.05);
+            background: transparent !important;
+        }
 
-/* Tamaño de los Iconos de las Redes Sociales */
-.social-icon {
-    width: 24px;
-    height: 24px;
-    transition: all 0.3s ease-in-out;
-}
+        .formulario contacto {
+            width: 350px;
+            height: 350px;
+            transition: transform 0.4s;
+            display: block;
+            margin: 0 auto;
+            object-fit: cover;
+        }
 
-.social-icon:hover {
-    transform: scale(1.2);
-}
+        .formulario.contacto:hover {
+            transform: scale(1.03) rotate(-1deg);
+        }
 
-/* Botones métodos de pago */
-.metodo-pago {
-    display: inline-block;
-    width: 170px;
-    text-align: center;
-    text-decoration: none;
-    padding: 10px 20px;
-    margin: 5px;
-    border-radius: 5px;
-    background-color: #e4e3f3;
-    color: black;
-    font-weight: bold;
-    transition: all 0.3s ease-in-out;
-    border: 2px solid #198754;
-    cursor: pointer;
-}
+        /* Tamaño de los Iconos de las Redes Sociales */
+        .social-icon {
+            width: 24px;
+            height: 24px;
+            transition: all 0.3s ease-in-out;
+        }
 
-.metodo-pago:hover {
-    color: white;
-    background-color: #198738;
-    border-color: #198754;
-    box-shadow: 0 0 0 0.1rem rgba(25, 135, 84, 0.25);
-}
+        .social-icon:hover {
+            transform: scale(1.2);
+        }
 
-.metodo-pago.selected {
-    background-color: #198754;
-    color: white;
-}
+        /* Botones métodos de pago */
+        .metodo-pago {
+            display: inline-block;
+            width: 170px;
+            text-align: center;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            background-color: #e4e3f3;
+            color: black;
+            font-weight: bold;
+            transition: all 0.3s ease-in-out;
+            border: 2px solid #198754;
+            cursor: pointer;
+        }
 
-.btn-eliminar {
-    color: red;
-    font-weight: bold;
-    cursor: pointer;
-}
+        .metodo-pago:hover {
+            color: white;
+            background-color: #198738;
+            border-color: #198754;
+            box-shadow: 0 0 0 0.1rem rgba(25, 135, 84, 0.25);
+        }
 
-/* Efectos y Animaciones para la página */
-@keyframes circle-in-top-right {
-    from {
-        clip-path: circle(0%);
-    }
+        .metodo-pago.selected {
+            background-color: #198754;
+            color: white;
+        }
 
-    to {
-        clip-path: circle(150% at top right);
-    }
-}
+        .btn-eliminar {
+            color: red;
+            font-weight: bold;
+            cursor: pointer;
+        }
 
-[transition-style="in:circle:top-right"] {
-    animation: 2.5s cubic-bezier(.25, 1, .30, 1) circle-in-top-right both;
-}
+        /* Efectos y Animaciones para la página */
+        @keyframes circle-in-top-right {
+            from {
+                clip-path: circle(0%);
+            }
 
-/* Misión y Visión */
-.m_v {
-    transition: all 0.3s ease-in-out;
-}
+            to {
+                clip-path: circle(150% at top right);
+            }
+        }
 
-.m_v:hover {
-    transform: scale(1.05);
-}
+        [transition-style="in:circle:top-right"] {
+            animation: 2.5s cubic-bezier(.25, 1, .30, 1) circle-in-top-right both;
+        }
 
-/* Ancho del input Valor del Producto */
-.ancho {
-    width: 150px;
-    text-align: center;
-}
+        /* Misión y Visión */
+        .m_v {
+            transition: all 0.3s ease-in-out;
+        }
 
-/* Ancho del input Valor del Producto */
-.agregar {
-    width: auto;
-}
+        .m_v:hover {
+            transform: scale(1.05);
+        }
 
-.agregar:hover {
-    background-color: #198754;
-    color: white;
-    transition: all 0.3s ease-in-out;
-}
+        /* Ancho del input Valor del Producto */
+        .ancho {
+            width: 150px;
+            text-align: center;
+        }
 
-/* Estilos para dispositivos móviles: Celular */
-@media (max-width: 768px) {
-    .logo {
-        width: 50px !important;
-        height: 50px !important;
-    }
+        /* Ancho del input Valor del Producto */
+        .agregar {
+            width: auto;
+        }
 
-    .navbar-brand {
-        font-size: 1.2rem !important;
-    }
-}
+        .agregar:hover {
+            background-color: #198754;
+            color: white;
+            transition: all 0.3s ease-in-out;
+        }
 
-/* Botones añadir al carrito y comprar se hagan más pequeños: Celular */
-@media (max-width: 768px) {
+        /* Estilos para dispositivos móviles: Celular */
+        @media (max-width: 768px) {
+            .logo {
+                width: 50px !important;
+                height: 50px !important;
+            }
 
-    .comprar-btn,
-    .add-to-cart-btn {
-        display: block;
-        font-size: 0.80rem;
-        font-weight: bold;
-        margin: 0;
-        margin-bottom: 8px;
-        align-items: center;
-        width: 100%;
-    }
+            .navbar-brand {
+                font-size: 1.2rem !important;
+            }
+        }
 
-    /* Asegura separación vertical en pantallas pequeñas */
-    .comprar-btn,
-    .add-to-cart-btn {
-        display: inline-block;
-    }
+        /* Botones añadir al carrito y comprar se hagan más pequeños: Celular */
+        @media (max-width: 768px) {
 
-    /* Ajusta el ancho de los botones en pantallas pequeñas */
-    .comprar-btn,
-    .add-to-cart-btn {
-        display: block;
-        width: 100%;
-        margin-right: 0 !important;
-        margin-bottom: 8px;
-    }
-}
+            .comprar-btn,
+            .add-to-cart-btn {
+                display: block;
+                font-size: 0.80rem;
+                font-weight: bold;
+                margin: 0;
+                margin-bottom: 8px;
+                align-items: center;
+                width: 100%;
+            }
 
-    #carrito-flotante {
-        position: fixed;
-        right: 20px;
-        top: 50%;
-        background: white;
-        padding: 10px;
-        border-radius: 64px 40px 16px 96px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-        border: 2px solid #322cf2;
-        z-index: 9999;
-        transition: all 0.3s ease-in-out;
-    }
+            /* Asegura separación vertical en pantallas pequeñas */
+            .comprar-btn,
+            .add-to-cart-btn {
+                display: inline-block;
+            }
 
-    #carrito-flotante:hover {
-        transform: scale(1.05);
-        background: #f0f0f0;
-    }
+            /* Ajusta el ancho de los botones en pantallas pequeñas */
+            .comprar-btn,
+            .add-to-cart-btn {
+                display: block;
+                width: 100%;
+                margin-right: 0 !important;
+                margin-bottom: 8px;
+            }
+        }
 
-    @media (max-width: 768px) {
-    .table thead {
-        display: none; /* Oculta encabezados en pantallas pequeñas */
-    }
+        #carrito-flotante {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            background: white;
+            padding: 10px;
+            border-radius: 64px 40px 16px 96px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+            border: 2px solid #322cf2;
+            z-index: 9999;
+            transition: all 0.3s ease-in-out;
+        }
 
-    .table,
-    .table tbody,
-    .table tr,
-    .table td {
-        display: block;
-        width: 100%;
-    }
+        #carrito-flotante:hover {
+            transform: scale(1.05);
+            background: #f0f0f0;
+        }
 
-    .table tr {
-        margin-bottom: 15px;
-        border: 3px double #000;
-        padding: 8px;
-        background: #f9f9f9;
-    }
+        @media (max-width: 768px) {
+            .table thead {
+                display: none;
+                /* Oculta encabezados en pantallas pequeñas */
+            }
 
-    .table td {
-        text-align: right;
-        padding-left: 50%;
-        position: relative;
-        border: none;
-        border-bottom: 2px double #000;
-    }
+            .table,
+            .table tbody,
+            .table tr,
+            .table td {
+                display: block;
+                width: 100%;
+            }
 
-    .table td::before {
-        content: attr(data-label); /* Etiqueta de encabezado */
-        position: absolute;
-        left: 10px;
-        width: 45%;
-        padding-right: 10px;
-        font-weight: bold;
-        text-align: left;
-        white-space: nowrap;
-    }
+            .table tr {
+                margin-bottom: 15px;
+                border: 3px double #000;
+                padding: 8px;
+                background: #f9f9f9;
+            }
 
-    /* Botones se acomodan en columna */
-    .table td button {
-        width: 100%;
-        margin-top: 5px;
-    }
-}
+            .table td {
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+                border: none;
+                border-bottom: 2px double #000;
+            }
 
-@media (max-width: 480px) {
-    .table {
-        font-size: 14px;
-    }
-    .btn {
-        font-size: 12px;
-        padding: 3px 6px;
-    }
-}
+            .table td::before {
+                content: attr(data-label);
+                /* Etiqueta de encabezado */
+                position: absolute;
+                left: 10px;
+                width: 45%;
+                padding-right: 10px;
+                font-weight: bold;
+                text-align: left;
+                white-space: nowrap;
+            }
+
+            /* Botones se acomodan en columna */
+            .table td button {
+                width: 100%;
+                margin-top: 5px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .table {
+                font-size: 14px;
+            }
+
+            .btn {
+                font-size: 12px;
+                padding: 3px 6px;
+            }
+        }
